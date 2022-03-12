@@ -18,5 +18,4 @@ L++;
 if (numbers)
 return numbers;
 else
-return 0; 
-}
+return 0; }
