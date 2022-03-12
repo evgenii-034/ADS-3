@@ -22,5 +22,6 @@ l = mid + 1;
 h = mid - 1;
 }
 }
+}
 return 0;
 }
