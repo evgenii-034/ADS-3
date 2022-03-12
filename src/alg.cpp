@@ -1,13 +1,12 @@
 // Copyright 2021 NNTU-CS
 
 int cbinsearch(int *arr, int size, int value) {
-L = 0, R = size - 1, middle, numbers = 0;
 int L = 0, R = size - 1, middle, numbers = 0;
 while (L < R) {
 middle = (L + R) / 2;
-if (arr[middle] < value) {
+if (arr[middle] < value)
 L = middle + 1;
-} else {
+else
 R = middle;
 }
 if (arr[L] == value) {
@@ -16,8 +15,8 @@ numbers++;
 L++;
 }
 }
-if (numbers){
+if (numbers)
 return numbers;
-} else {
+else
 return 0; 
 }
