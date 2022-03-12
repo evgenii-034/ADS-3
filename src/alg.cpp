@@ -1,27 +1,23 @@
 // Copyright 2021 NNTU-CS
 
 int cbinsearch(int *arr, int size, int value) {
-int h = size - 1;
-int l = 0;
-int mid;
-while (l <= size) {
-while (l <= h) {
-mid = (l + h) / 2;
-if (value == *(arr + mid)) {
-l = h = mid;
-while (*(arr + h) == *(arr + h + 1)) {
-h++;
+L = 0, R = size - 1, middle, numbers = 0;
+int L = 0, R = size - 1, middle, numbers = 0;
+while (L < R) {
+middle = (L + R) / 2;
+if (arr[middle] < value) {
+L = middle + 1;
+} else {
+R = middle;
 }
-while (*(arr + l) == *(arr + l - 1)) {
-l--;
-}
-return h - l + 1;
-} else if (value > *(arr + mid)) {
-l = mid + 1;
-} else if (value < *(arr + mid)) {
-h = mid - 1;
+if (arr[L] == value) {
+while (arr[L] == value) {
+numbers++;
+L++;
 }
 }
-}
-return 0;
+if (numbers){
+return numbers;
+} else {
+return 0; 
 }
